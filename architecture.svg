@@ -1,0 +1,46 @@
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333333"/>
+    </marker>
+    <marker id="arrow-rev" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M9,0 L9,6 L0,3 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <!-- AWS VPC box -->
+  <rect x="20" y="40" width="260" height="260" rx="8" fill="#F7F7F7" stroke="#333333" stroke-width="2"/>
+  <text x="150" y="66" font-size="15" fill="#222222" text-anchor="middle" font-weight="bold">AWS VPC (historynet)</text>
+
+  <rect x="45" y="86" width="210" height="40" rx="6" fill="#FFFFFF" stroke="#333333" stroke-width="1.5"/>
+  <text x="150" y="110" font-size="13" fill="#222222" text-anchor="middle">Bastion / NAT GW</text>
+
+  <rect x="45" y="136" width="210" height="40" rx="6" fill="#FFFFFF" stroke="#333333" stroke-width="1.5"/>
+  <text x="150" y="160" font-size="13" fill="#222222" text-anchor="middle">Web (Nginx) · ALB</text>
+
+  <rect x="45" y="186" width="210" height="40" rx="6" fill="#FFFFFF" stroke="#333333" stroke-width="1.5"/>
+  <text x="150" y="210" font-size="13" fill="#222222" text-anchor="middle">WAS (Flask) · NLB</text>
+
+  <rect x="45" y="236" width="210" height="40" rx="6" fill="#E8E8E8" stroke="#333333" stroke-width="1.5"/>
+  <text x="150" y="260" font-size="13" fill="#222222" text-anchor="middle">RDS (MySQL)</text>
+
+  <!-- GCP VPC box -->
+  <rect x="420" y="40" width="260" height="260" rx="8" fill="#F7F7F7" stroke="#333333" stroke-width="2"/>
+  <text x="550" y="66" font-size="15" fill="#222222" text-anchor="middle" font-weight="bold">GCP VPC (history-net)</text>
+
+  <rect x="445" y="96" width="210" height="40" rx="6" fill="#FFFFFF" stroke="#333333" stroke-width="1.5"/>
+  <text x="550" y="120" font-size="13" fill="#222222" text-anchor="middle">gcp-bastion (Rocky Linux)</text>
+
+  <rect x="445" y="156" width="210" height="50" rx="6" fill="#E8E8E8" stroke="#333333" stroke-width="1.5"/>
+  <text x="550" y="178" font-size="13" fill="#222222" text-anchor="middle">Cloud SQL (MySQL)</text>
+  <text x="550" y="196" font-size="11" fill="#555555" text-anchor="middle">비공개 IP · PSA</text>
+
+  <!-- VPN connection -->
+  <line x1="280" y1="170" x2="418" y2="170" stroke="#333333" stroke-width="2.5" marker-end="url(#arrow)" marker-start="url(#arrow-rev)"/>
+  <text x="350" y="150" font-size="12" fill="#222222" text-anchor="middle">HA VPN</text>
+  <text x="350" y="192" font-size="11" fill="#555555" text-anchor="middle">(BGP, Tunnel×4)</text>
+
+  <!-- Route53 / DNS note -->
+  <rect x="220" y="320" width="260" height="42" rx="6" fill="#FFFFFF" stroke="#333333" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="350" y="346" font-size="12" fill="#333333" text-anchor="middle">Route53: db.cloud.local → Cloud SQL 비공개 IP</text>
+</svg>
