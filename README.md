@@ -14,7 +14,7 @@ AWS VPC(historynet)의 3-Tier 웹 서비스(Web-Nginx, WAS-Flask, RDS)와 GCP VP
 
 ## Tech Stack
 
-`GCP Compute Engine` `Cloud SQL (MySQL)` `VPC` `Cloud VPN` `Terraform` `AWS`
+`GCP Compute Engine` `Cloud SQL (MySQL)` `VPC` `AWS`
 
 ---
 
